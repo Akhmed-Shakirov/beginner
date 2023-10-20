@@ -1,0 +1,276 @@
+{
+	"template": {
+		"prefix": "tem",
+		"body": [
+			"<template>",
+			"",
+			"</template>",
+			"",
+			"<script setup lang=\"ts\">",
+			"",
+			"</script>",
+			"",
+			"<style scoped lang=\"scss\">",
+			"",
+			"</style>"
+		],
+		"description": "template"
+	},
+	"type": {
+		"prefix": "type",
+		"body": [
+			"type MyObject = {",
+			"    fio: string",
+			"    address: string",
+			"    [key: string]: any",
+			"}"
+		],
+		"description": "type"
+	},
+	"props": {
+		"prefix": "props",
+		"body": [
+			"const props = defineProps<{",
+			"    modelValue: string",
+			"}>()"
+		],
+		"description": "props"
+	},
+	"emit": {
+		"prefix": "emit",
+		"body": [
+		  	"const emit = defineEmits(['update:modelValue'])"
+		],
+		"description": "emit"
+	},
+	"ref": {
+		"prefix": "ref",
+		"body": [
+			"import { ref } from 'vue'",
+			"const value = ref<string>(null)"
+		],
+		"description": "ref"
+	},
+	"const": {
+		"prefix": "const",
+		"body": [
+		  	"const $1 = ref<string>(null)"
+		],
+		"description": "const"
+	},
+	"trans": {
+		"prefix": "trans",
+		"body": [
+		  	"$t($1 ?? '')"
+		],
+		"description": "trans"
+	},
+	"import": {
+		"prefix": "import",
+		"body": [
+		  	"import $2 from '@/components/UI/$1.vue'"
+		],
+		"description": "import"
+	},
+	"method": {
+		"prefix": "method",
+		"body": [
+		  "const method = (value: string): number => {",
+		  "    return 0",
+		  "}"
+		],
+		"description": "method"
+	},
+	"validator": {
+		"prefix": "validator",
+		"body": [
+		  "<input",
+		  "    @invalid=\"validator\"",
+		  "    :value=\"modelValue\"",
+		  "    :required=\"isRequired\"",
+		  "    style=\"display: none\"",
+		  ">",
+		  "",
+		  "const isValidation = ref(false)",
+		  "",
+		  "const validator = (e: any) => {",
+		  "    isValidation.value = false",
+		  "    if (e.target.validity.valid) return",
+		  "",
+		  "    for (const key in e.target.validity) {",
+		  "        if (e.target.validity[key]) isValidation.value = true",
+		  "    }",
+		  "}",
+		  "",
+		  "const updateValue = (e: any) => {",
+		  "    emit('update:modelValue', e.target.value)",
+		  "}"
+		],
+		"description": "validator"
+	},
+	"el": {
+		"prefix": "el",
+		"body": [
+		  	"const el = ref<HTMLElement | null>(null)"
+		],
+		"description": "el"
+	},
+	"modelValue": {
+		"prefix": "modelValue",
+		"body": [
+		  	"const {modelValue, type} = defineModels<{ modelValue: string, type: string }>()"
+		],
+		"description": "modelValue"
+	},
+	"computed": {
+		"prefix": "computed",
+		"body": [
+		  "const value= computed<number>(() => {",
+		  "    return 0",
+		  "})"
+		],
+		"description": "computed"
+	},
+	"var": {
+		"prefix": "var",
+		"body": [
+		  	":style=\"`--var: ${value}`\""
+		],
+		"description": "var"
+	},
+	"json": {
+		"prefix": "json",
+		"body": [
+		  	"JSON.parse(JSON.stringify($1))"
+		],
+		"description": "json"
+	},
+	"slot": {
+		"prefix": "slot",
+		"body": [
+		  	"<slot name=\"header\">"
+		],
+		"description": "slot"
+	},
+	"slotTem": {
+		"prefix": "slotTem",
+		"body": [
+			"<template #header>",
+			"",
+			"</template>"
+		],
+		"description": "slotTem"
+	},
+	"slotScope": {
+		"prefix": "slotScope",
+		"body": [
+			"<slot :count=\"1\"></slot>",
+			"<MyComponent v-slot=\"slotProps\">",
+			"    {{ slotProps.count }}",
+			"</MyComponent>",
+			"",
+			"<slot name=\"header\" :count=\"1\"></slot>",
+			"<template #header=\"headerProps\">",
+			"    {{ headerProps }}",
+			"</template>"
+		],
+		"description": "slotScope"
+	},
+	"log": {
+		"prefix": "log",
+		"body": [
+		  	"console.log($1)"
+		],
+		"description": "log"
+	},
+	"watch": {
+		"prefix": "watch",
+		"body": [
+			"watch(() => count.value, () => {",
+			"    console.log(count.value)",
+			"}, { deep: true })"
+		],
+		"description": "watch"
+	},
+	"watchDebounced": {
+		"prefix": "watchDebounced",
+		"body": [
+			"watchDebounced(count, () => {",
+			"    console.log(count.value)",
+			"}, { debounce: 1000, maxWait: 5000 })"
+		],
+		"description": "watchDebounced"
+	},
+	"class": {
+		"prefix": "class",
+		"body": [
+		  	":class=\"{ '' : true }\""
+		],
+		"description": "class"
+	},
+	"for": {
+		"prefix": "for",
+		"body": [
+		  	"v-for=\"item in items\" :key=\"item\""
+		],
+		"description": "for"
+	},
+	"store": {
+		"prefix": "store",
+		"body": [
+			"import { ref } from 'vue'",
+			"import { defineStore } from 'pinia'",
+			"",
+			"export const useCountStore = defineStore('count', () => {",
+			"    const count = ref(0)",
+			"",
+			"    return {",
+			"        count",
+			"    }",
+			"})",
+			"",
+			"",
+			"// import { useCountStore } from '@/stores/count'",
+			"// import { storeToRefs } from 'pinia'",
+			"// const { count } = storeToRefs(useCountStore())"
+		],
+		"description": "store"
+	},
+	"CRUD": {
+		"prefix": "CRUD",
+		"body": [
+			"// CRUD",
+			"const createData = () => {",
+			"    axios.post(`/api/`,  item )",
+			"        .then(() => {})",
+			"        .finally(() => {})",
+			"}",
+			"",
+			"const readData = () => {",
+			"    axios.get(`/api/`)",
+			"        .then(res => { data = res.data })",
+			"        .finally(() => {})",
+			"}",
+			"  ",
+			"const updateData = () => {",
+			"    axios.put(`/api/${id}/`)",
+			"        .then(() => {})",
+			"        .finally(() => {})",
+			"}",
+			"    ",
+			"const deleteData = () => {",
+			"    axios.delete(`/api/${id}/`)",
+			"        .then(() => {})",
+			"        .finally(() => {})",
+			"}"
+		],
+		"description": "CRUD"
+	}
+}
+
+
+
+
+
+
+
