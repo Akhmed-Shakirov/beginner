@@ -185,7 +185,7 @@
 	"slot": {
 		"prefix": "v-slot",
 		"body": [
-		  	"<slot name=\"header\">"
+		  	"<slot name=\"header\" />"
 		],
 		"description": "slot"
 	},
@@ -201,12 +201,12 @@
 	"slotScope": {
 		"prefix": "v-slotScope",
 		"body": [
-			"<slot :count=\"1\"></slot>",
+			"<slot :count=\"1\" />",
 			"<MyComponent v-slot=\"slotProps\">",
 			"    {{ slotProps.count }}",
 			"</MyComponent>",
 			"",
-			"<slot name=\"header\" :count=\"1\"></slot>",
+			"<slot name=\"header\" :count=\"1\" />",
 			"<template #header=\"headerProps\">",
 			"    {{ headerProps }}",
 			"</template>"
