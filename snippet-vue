@@ -43,6 +43,21 @@
 		],
 		"description": "json"
 	},
+    "array-update": {
+        "prefix": "array-update",
+        "body": [
+            "const index = array.findIndex(el => el.id === item.id)",
+            "array.splice(index, 1, item)"
+        ],
+        "description": "array-update"
+    },
+    "array-remove": {
+        "prefix": "array-remove",
+        "body": [
+            "array = array.filter(el => el.id !== item.id)"
+        ],
+        "description": "array-remove"
+    },
 	"template": {
 		"prefix": "v-tem",
 		"body": [
