@@ -120,7 +120,7 @@
 	"trans": {
 		"prefix": "v-trans",
 		"body": [
-		  	"$t($1 ?? '')"
+		  	"t($1 ?? '')"
 		],
 		"description": "trans"
 	},
@@ -184,7 +184,7 @@
 	"computed": {
 		"prefix": "v-computed",
 		"body": [
-		  "const value= computed<number>(() => {",
+		  "const value = computed<number>(() => {",
 		  "    return 0",
 		  "})"
 		],
