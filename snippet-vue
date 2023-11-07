@@ -43,6 +43,22 @@
 		],
 		"description": "json"
 	},
+	"array": {
+		"prefix": "array",
+		"body": [
+		  "const array = [",
+		  "    { id: 1, name: 'Alex', age: 22 },",
+		  "    { id: 2, name: 'Tom', age: 22 },",
+		  "    { id: 3, name: 'Maik', age: 23 },",
+		  "    { id: 4, name: 'Jon', age: 25 },",
+		  "    { id: 5, name: 'Max', age: 24 },",
+		  "    { id: 6, name: 'Yuri', age: 26 },",
+		  "    { id: 7, name: 'Lana', age: 22 },",
+		  "    { id: 8, name: 'Misha', age: 23 },",
+		  "]"
+		],
+		"description": "array"
+	},
     "array-update": {
         "prefix": "array-update",
         "body": [
