@@ -6,6 +6,13 @@
 		],
 		"description": "log"
 	},
+	"import": {
+		"prefix": "import",
+		"body": [
+		  	"import {  } from '$1'"
+		],
+		"description": "import"
+	},
 	"CRUD": {
 		"prefix": "CRUD",
 		"body": [
@@ -139,13 +146,6 @@
 		  	"t($1 ?? '')"
 		],
 		"description": "trans"
-	},
-	"import": {
-		"prefix": "v-import",
-		"body": [
-		  	"import $2 from '@/components/UI/$1.vue'"
-		],
-		"description": "import"
 	},
 	"method": {
 		"prefix": "v-method",
@@ -298,10 +298,3 @@
 		"description": "store"
 	}
 }
-
-
-
-
-
-
-
